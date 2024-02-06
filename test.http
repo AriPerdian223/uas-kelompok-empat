@@ -1,0 +1,99 @@
+# Membuat Pengguna Baru
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "userSatu",
+  "password" : "rahasia",
+  "name" : "arie ajalah"
+}
+
+###
+
+# Melakukan Login
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "userSatu",
+  "password" : "rahasia"
+}
+
+###
+
+# Mendapatkan Pengguna Saat Ini
+GET http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: c09a5b54-5417-45ee-b7c6-83becf4ff63b
+###
+
+# Melakukan Pembaruan Pengguna Saat Ini
+PATCH http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: c09a5b54-5417-45ee-b7c6-83becf4ff63b
+
+{
+  "name" : "arie maniez"
+}
+
+###
+
+# Logout Pengguna
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: fc04f6c7-517b-4f0d-882d-b5aae780ec0e
+###
+
+# Membuat Undangan Baru
+POST http://localhost:3000/api/undangans
+Content-Type: application/json
+Accept: application/json
+Authorization: c09a5b54-5417-45ee-b7c6-83becf4ff63b
+
+{
+    "namaPengantin": "wahyu & rizki",
+    "tanggal": "2024-01-15",
+    "lokasi": "bogor",
+    "yourStatus": "Hadir"
+}
+
+###
+
+# Mendapatkan Daftar Undangan
+GET http://localhost:3000/api/undangans
+Content-Type: application/json
+Accept: application/json
+Authorization: c09a5b54-5417-45ee-b7c6-83becf4ff63b
+###
+
+# Mendapatkan Undangan Berdasarkan ID
+GET http://localhost:3000/api/undangans/1
+Content-Type: application/json
+Accept: application/json
+Authorization: c09a5b54-5417-45ee-b7c6-83becf4ff63b
+
+# Melakukan Pembaruan Undangan Berdasarkan ID
+PATCH http://localhost:3000/api/undangans/1
+Content-Type: application/json
+Accept: application/json
+Authorization: 71ed51bb-c046-450b-bca3-7a37758414d0
+
+{
+  "namaPengantin": "wahyu & dinarta",
+  "tanggal": "2024-02-02",
+  "lokasi": "cibadak",
+  "yourStatus": "Hadir"
+}
+
+###
+
+# Menghapus Undangan Berdasarkan ID
+DELETE http://localhost:3000/api/undangans/2
+Content-Type: application/json
+Accept: application/json
+Authorization: 8f4712b7-3b78-4e61-a325-b7b1d28a6c74
